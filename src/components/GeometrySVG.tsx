@@ -8,26 +8,26 @@ interface GeometrySVGProps {
 export const GeometrySVG: React.FC<GeometrySVGProps> = ({ step }) => {
   // SVG Coordinate System (y goes down)
   // Unit length = 200px
-  const B = { x: 300, y: 450 };
-  const A = { x: 300, y: 250 };
-  const C = { x: 500, y: 450 };
-  const A_prime = { x: 100, y: 450 };
-  const C_prime = { x: 100, y: 50 };
+  const B = { x: 300, y: 400 };
+  const A = { x: 300, y: 200 };
+  const C = { x: 500, y: 400 };
+  const A_prime = { x: 100, y: 400 };
+  const C_prime = { x: 100, y: 0 };
 
   // P is on AC (e.g., x=0.6)
-  const P = { x: 420, y: 370 };
+  const P = { x: 420, y: 320 };
   // Q is P rotated 90 deg CCW around B
-  const Q = { x: 220, y: 330 };
+  const Q = { x: 220, y: 280 };
   // Q* is intersection of BC' and A'A
-  const Q_star = { x: 233.3, y: 316.7 };
+  const Q_star = { x: 233.3, y: 266.7 };
 
   // Helper to generate path string
   const path = (...points: { x: number; y: number }[]) =>
     `M ${points.map((p) => `${p.x},${p.y}`).join(" L ")}`;
 
   return (
-    <div className="w-full h-full relative bg-white flex items-center justify-center">
-      <svg viewBox="0 0 600 500" className="w-full h-full max-h-full">
+    <div className="w-full h-full relative bg-white flex items-start justify-start p-4">
+      <svg viewBox="0 0 600 500" preserveAspectRatio="xMinYMin meet" className="w-full h-full">
         {/* Base Grid / Axes (Step 4) */}
         <AnimatePresence>
           {step >= 4 && (
