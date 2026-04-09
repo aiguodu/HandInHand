@@ -6,7 +6,7 @@
  * API Docs: https://www.volcengine.com/docs/6561/1598757
  */
 
-const TTS_PROXY_URL = '/api/tts';
+const TTS_PROXY_URL = '/tts';
 
 export interface TtsResult {
   audioUrl: string;   // Object URL for the blob
